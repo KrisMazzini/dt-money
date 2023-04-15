@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 
 import {
   PriceHighlight,
@@ -13,7 +13,10 @@ import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext)
+  const transactions = useContextSelector(
+    TransactionsContext,
+    (context) => context.transactions,
+  )
 
   return (
     <div>
