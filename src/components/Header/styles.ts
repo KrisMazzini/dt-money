@@ -15,15 +15,26 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  img {
+    width: 117px;
+  }
+
+  @media (min-width: 480px) {
+    img {
+      width: 172px;
+    }
+  }
 `
 
 export const NewTransactionButton = styled.button`
-  height: 50px;
+  height: 38px;
 
-  padding: 0 1.25rem;
+  padding: 0 1rem;
   border: 0;
   border-radius: 6px;
 
+  font-size: 0.875rem;
   font-weight: bold;
   color: ${(props) => props.theme.white};
   background: ${(props) => props.theme['green-500']};
@@ -33,5 +44,12 @@ export const NewTransactionButton = styled.button`
   &:hover {
     background: ${(props) => props.theme['green-700']};
     transition: background-color 0.2s;
+  }
+
+  @media (min-width: 480px) {
+    height: 50px;
+
+    padding: 0 1.25rem;
+    font-size: 1rem;
   }
 `

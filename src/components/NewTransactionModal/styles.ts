@@ -11,15 +11,14 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-  min-width: 32rem;
   border-radius: 6px;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 1.5rem 2.5rem;
   background: ${(props) => props.theme['gray-800']};
 
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   form {
     margin-top: 2rem;
@@ -63,6 +62,17 @@ export const Content = styled(Dialog.Content)`
         transition: color 0.2s;
       }
     }
+  }
+
+  @media (min-width: 480px) {
+    min-width: 32rem;
+    padding: 2.5rem 3rem;
+
+    top: 50%;
+    left: 50%;
+    right: initial;
+    bottom: initial;
+    transform: translate(-50%, -50%);
   }
 `
 

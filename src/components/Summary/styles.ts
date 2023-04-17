@@ -3,14 +3,17 @@ import styled, { css } from 'styled-components'
 export const SummaryContainer = styled.section`
   width: 100%;
   max-width: 1120px;
-  margin: 0 auto;
+  margin: -5rem auto 0;
   padding: 0 1.5rem;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
-  margin-top: -5rem;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 interface SummaryCardProps {
@@ -18,6 +21,8 @@ interface SummaryCardProps {
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`
+  min-width: 280px;
+
   background: ${(props) => props.theme['gray-600']};
   border-radius: 6px;
   padding: 2rem;
